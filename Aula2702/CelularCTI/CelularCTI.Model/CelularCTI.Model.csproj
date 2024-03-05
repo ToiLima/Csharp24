@@ -90,8 +90,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aparelho.cs" />
     <Compile Include="Fabricante.cs" />
     <Compile Include="ConexaoBanco.cs" />
+    <Compile Include="Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
