@@ -91,10 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aparelho.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Fabricante.cs" />
     <Compile Include="ConexaoBanco.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servico.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

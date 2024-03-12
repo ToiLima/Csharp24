@@ -11,19 +11,20 @@ namespace Celulares.Model.Entidades
 	public class Aparelho
 	{
 		private Int64 id_aparelho;
-		private string nome;
+		private string modelo;
 		private Fabricante fabricante;
 		private double largura, altura, espessura, peso, quantidade;
 		private decimal preco, desconto;
 
 		//Getters e Setters
 		public Int64 Id_Aparelho { get; set; }
-		public string Nome { get; set; }
+		public string Modelo { get; set; }
 		public Fabricante Fabricante { get; set; }
 		public double Largura { get; set; }
 		public double Altura { get; set; }
 		public double Espessura { get; set; }
 		public double Peso { get; set; }
+		
 		//public decimal Preco { get; set; }
 		public double Quantidade
 		{
@@ -54,11 +55,12 @@ namespace Celulares.Model.Entidades
 			}
 		}
 		public decimal Desconto { get; set; }
+		
 
 		public override string ToString()
 		{
 			// veremos o uso deste método em breve.
-			return Fabricante.Nome + " " + Nome + " - R$ " + Preco +
+			return Fabricante.Nome + " " + Modelo + " - R$ " + Preco +
 			" (" + Quantidade + " em estoque)";
 		}
 	}
