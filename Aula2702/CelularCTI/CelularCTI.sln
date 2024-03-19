@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelularCTI.Model", "CelularCTI.Model\CelularCTI.Model.csproj", "{384007D4-DFC4-4EDA-8941-F792B28A73A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelularCTI", "CelularCTI\CelularCTI.csproj", "{8E93FD47-869C-458F-8405-7328D2FD5570}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelularCTI.Desktop", "CelularCTI\CelularCTI.Desktop.csproj", "{8E93FD47-869C-458F-8405-7328D2FD5570}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

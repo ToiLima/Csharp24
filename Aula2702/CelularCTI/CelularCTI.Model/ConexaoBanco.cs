@@ -21,7 +21,7 @@ namespace CelularCTI.Model.Suporte
 
 
         static string stringConexao = "Server = pgsql.projetoscti.com.br; " +
-                                      "Database = projetos; Port=5432;" +
+                                      "Database = projetoscti; Port=5432;" +
                                       "User ID= projetos; password = 123;";
 
 

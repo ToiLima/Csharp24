@@ -29,13 +29,13 @@ namespace CelularCTI.Model.Entidades
 			Aparelho a = new Aparelho();
 			a.Id_Aparelho = Convert.ToInt64(dtr["id_aparelho"]);
 			a.Modelo = (String)dtr["modelo"];
-			a.Quantidade = (double)dtr["quantidade"];
-			a.Largura = (double)(dtr["largura"]);
-			a.Altura = (double)(dtr["altura"]);
-			a.Espessura = (double)(dtr["espessura"]);
-			a.Peso = (double)(dtr["peso"]);
-			a.Preco = (decimal)(dtr["preco"]);
-			a.Desconto = (decimal)(dtr["desconto"]);
+			a.Quantidade = Convert.ToDouble(dtr["quantidade"]);
+			a.Largura = Convert.ToDouble(dtr["largura"]);
+			a.Altura = Convert.ToDouble(dtr["altura"]);
+			a.Espessura = Convert.ToDouble(dtr["espessura"]);
+			a.Peso = Convert.ToDouble(dtr["peso"]);
+			a.Preco = Convert.ToDecimal(dtr["preco"]);
+			a.Desconto = Convert.ToDecimal(dtr["desconto"]);
 			a.Fabricante = ObjFabricante(ref dtr);
 			return a;
 		}
@@ -211,7 +211,7 @@ namespace CelularCTI.Model.Entidades
 
 
 
-		public static List<Fabricante> TodosFabricantes()
+		public static List<Fabricante> BuscarFabricante()
 		{
 			List<Fabricante> fabricantes = new List<Fabricante>();
 			NpgsqlDataReader dtr = ConexaoBanco.Selecionar("SELECT * FROM fabricante order by nome");
@@ -221,7 +221,7 @@ namespace CelularCTI.Model.Entidades
 			return fabricantes;
 		}
 
-		public static List<Fabricante> ListarFabricante()
+		public static List<Fabricante> ListarFabricante(Int64 id)
 		{
 			string sql;
 			List<Fabricante> fabricante = new List<Fabricante>();
