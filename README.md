@@ -1,3 +1,3 @@
-# Csharp24
+# LPIV_Csharp
 
-Repositório para as atividades para a matéria de LING. PROGRAMAÇÃO IV, C#.
+Repositório para as atividades da matéria de LING. PROGRAMAÇÃO IV, C#.
