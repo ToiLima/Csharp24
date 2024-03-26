@@ -15,8 +15,6 @@ namespace CelularCTI
 {
 	public partial class frmPrincipal : Form
 	{
-		List<Aparelho> aparelhos = new List<Aparelho>;
-		List<Fabricante> fabricantes = new List<Fabricante>;
 		public frmPrincipal()
 		{
 			InitializeComponent();
