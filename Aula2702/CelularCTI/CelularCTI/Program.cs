@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CelularCTI.Model;
+using CelularCTI.Model.Suporte;
 
 namespace CelularCTI
 {
@@ -14,9 +16,11 @@ namespace CelularCTI
 		[STAThread]
 		static void Main()
 		{
+			CelularCTI.Model.Suporte.ConexaoBanco.Conectar();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new frmPrincipal());
+			CelularCTI.Model.Suporte.ConexaoBanco.Desconectar();
 		}
 	}
 }

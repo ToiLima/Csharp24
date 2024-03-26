@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Celulares.Model.Entidades
+namespace CelularCTI.Model.Entidades
 {
 	public class Aparelho
 	{
@@ -56,12 +56,17 @@ namespace Celulares.Model.Entidades
 		}
 		public decimal Desconto { get; set; }
 		
-
+		//Sobescrever o método toString() para
+		//retornar  uma string com os dados que 
+		//desejo apresentar de aparelho.
 		public override string ToString()
 		{
 			// veremos o uso deste método em breve.
-			return Fabricante.Nome + " " + Modelo + " - R$ " + Preco +
-			" (" + Quantidade + " em estoque)";
+			return Fabricante.Nome.PadRight(12) + " " + 
+				Modelo.PadRight(25) + " " + 
+				Preco.ToString("C").PadLeft(20) +
+			    "      (" + Quantidade + " em estoque)";
+			//data_nasc.ToString("Bauru, dd /de MMMM de yyyy.")
 		}
 	}
 }

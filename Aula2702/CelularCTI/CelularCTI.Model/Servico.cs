@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CelularCTI.Model.Entidades;
 using CelularCTI.Model.Suporte;
-using Celulares.Model.Entidades;
 using Npgsql;
 
 namespace CelularCTI.Model.Entidades
@@ -139,6 +138,30 @@ namespace CelularCTI.Model.Entidades
 
 			return aparelho;
 		}
+
+		// Lista todos os aparelhos.
+		public static List<Aparelho> BuscarAparelho()
+		{
+			string sql;
+			List<Aparelho> aparelho = new List<Aparelho>();
+
+			sql = "SELECT aparelho.*, fabricante.* " +
+					"FROM aparelho INNER JOIN fabricante " +
+					"ON aparelho.id_fabricante = fabricante.id_fabricante " +
+				"ORDER BY aparelho.modelo";
+
+			NpgsqlDataReader dtr = ConexaoBanco.Selecionar(sql);
+			while (dtr.Read())
+				aparelho.Add(ObjAparelho(ref dtr));
+			dtr.Close();
+
+			return aparelho;
+		}
+
+		/*public static List<Aparelho> ListaPreco()
+		{
+
+		}*/
 
 		public static List<Aparelho> BuscarAparelho(decimal precoMin, decimal precoMax)
 		{

@@ -10,48 +10,49 @@ namespace CelularCTI.Model.Suporte
 {
     public static class ConexaoBanco
     {
-        //Variavel que contem os dados da conexão ao banco
-        //postgres utilizando o npgsql que é um drive nativo
-        //para acesso ao postgres para o C#
+		//Variavel que contem os dados da conexão ao banco
+		//postgres utilizando o npgsql que é um drive nativo
+		//para acesso ao postgres para o C#
 
 
-        // static string stringConexao = "Server = localhost; " +
-        //                              "Database = CelularCTI; Port=5432;" +
-        //                              "User ID= postgres; password = postgres;";
+		// static string stringConexao = "Server = localhost; " +
+		//                              "Database = CelularCTI; Port=5432;" +
+		//                              "User ID= postgres; password = postgres;";
 
 
-        static string stringConexao = "Server = pgsql.projetoscti.com.br; " +
-                                      "Database = projetoscti; Port=5432;" +
-                                      "User ID= projetos; password = 123;";
+		static string stringConexao = "Server = pgsql.projetoscti.com.br; Database=projetoscti;"
+			+ "User ID=projetoscti; Password=123; Port=5432";
 
 
-        static NpgsqlConnection cn;
-        private static void Conectar()
-        {
-            if (cn == null)
-                cn = new NpgsqlConnection();
-            try
-            {
-                if (cn.State != ConnectionState.Open)
-                {
-                    cn.ConnectionString = stringConexao;
-                    cn.Open();
-                }
-            }
-            catch (NpgsqlException ex)
-            {
-                throw new ApplicationException(ex.Message);
-            }
-        }
-        public static void Desconectar()
-        {
-            cn.Close();// fecha a conexão com o banco de dados
-            cn.Dispose(); // libera os recursos utilizados
-            cn = null;
-        }
-        //Executa uma query no banco de dados. (Sem retorno)
-        // insert - update - delete
-        public static void Executar(string sql)
+
+		static NpgsqlConnection cn;
+		public static void Conectar()
+		{
+			if (cn == null)
+				cn = new NpgsqlConnection();
+			try
+			{
+				if (cn.State != ConnectionState.Open)
+				{
+					cn.ConnectionString = stringConexao;
+					cn.Open();
+				}
+			}
+			catch (NpgsqlException ex)
+			{
+				throw new ApplicationException(ex.Message);
+			}
+		}
+		public static void Desconectar()
+		{
+			cn.Close();// fecha a conexão com o banco de dados
+			cn.Dispose(); // libera os recursos utilizados
+			cn = null;
+		}
+		//Executa uma query no banco de dados. (Sem retorno)
+		// insert - update - delete
+		
+		public static void Executar(string sql)
         {
             try
             {

@@ -95,6 +95,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmComprar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComprar.Designer.cs">
+      <DependentUpon>frmComprar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNovo.Designer.cs">
+      <DependentUpon>frmNovo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmComprar.resx">
+      <DependentUpon>frmComprar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNovo.resx">
+      <DependentUpon>frmNovo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
