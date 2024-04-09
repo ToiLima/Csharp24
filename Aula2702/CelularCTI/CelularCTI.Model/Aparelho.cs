@@ -62,11 +62,13 @@ namespace CelularCTI.Model.Entidades
 		public override string ToString()
 		{
 			// veremos o uso deste método em breve.
-			return Fabricante.Nome.PadRight(12) + " " +
-				Modelo.PadRight(25) + " " +
-				Preco.ToString("#,##0.00").PadLeft(10) + " " +
-				"   (" + Quantidade + "em estoque)";
+			/*return Fabricante.Nome.PadRight(20) + " " +
+				Modelo.PadLeft(20) + " " +
+				Preco.ToString("#,##0.00").PadLeft(20) + " " +
+				"   (" + Quantidade + " em estoque)";*/
 			//data_nasc.ToString("Bauru, dd /de MMMM de yyyy.")
+
+			return Fabricante.Nome.PadRight(20) + " " + Modelo.PadRight(60) + " " + Preco.ToString("#,##0.00").PadRight(30) + " " + Quantidade.ToString().PadLeft(20) + " ";   
 		}
 	}
 }

@@ -25,44 +25,18 @@ namespace CelularCTI
 
 			aparelhos = Servico.BuscarAparelho();
 			lstCelular.DataSource = aparelhos;
-
-			
-			/*foreach (Fabricante fabricante in fabricantes)
-				cmbFabricante.Items.Add(fabricante);*/
 		}
 
-		private void groupBox2_Enter(object sender, EventArgs e)
+		private void btnPreco_Click(object sender, EventArgs e)
 		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void groupBox1_Enter(object sender, EventArgs e)
-		{
-
+			aparelhos = Servico.BuscarAparelho(numPrecoMin.Value, numPrecoMax.Value);
+			lstCelular.DataSource = aparelhos;
 		}
 
 		private void btnModelo_Click(object sender, EventArgs e)
 		{
 			aparelhos = Servico.BuscarAparelho(txtModelo.Text);
 			lstCelular.DataSource= aparelhos;
-			//preencherLista();
-		}
-
-		private void btnPreco_Click(object sender, EventArgs e)
-		{
-			aparelhos = Servico.BuscarAparelho(nudPrecoMin.Value, nudPrecoMax.Value);
-			lstCelular.DataSource = aparelhos;
-			//preencherLista();
 		}
 
 		private void btnFabricante_Click(object sender, EventArgs e)
@@ -72,6 +46,31 @@ namespace CelularCTI
 
 			Servico.BuscarAparelhos(selecionado);
 			lstCelular.DataSource = aparelhos;
+		}
+
+		private void btnLstTodos_Click(object sender, EventArgs e)
+		{
+			aparelhos = Servico.BuscarAparelho();
+			lstCelular.DataSource = aparelhos;
+		}
+
+		private void btnSair_Click(object sender, EventArgs e)
+		{
+			DialogResult resposta;
+			resposta = MessageBox.Show("Você quer sair da aplicação?", this.Text,
+								MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (resposta == DialogResult.Yes)
+				this.Close();
+		}
+
+		private void btnComprar_Click(object sender, EventArgs e)
+		{
+			Aparelho selecionado = aparelhos[lstCelular.SelectedIndex];
+			if (selecionado.Quantidade > 0)
+				new frmComprar(selecionado).ShowDialog();
+			else
+				MessageBox.Show("Não há aparelhos deste modelo no estoque!");
+
 		}
 
 		private void btnNovo_Click(object sender, EventArgs e)
@@ -89,31 +88,6 @@ namespace CelularCTI
 		{
 			aparelhos = Servico.BuscarAparelhos(txtModelo.Text);
 			lstCelular.DataSource = aparelhos;
-		}
-
-		private void btnLstTodos_Click(object sender, EventArgs e)
-		{
-			aparelhos = Servico.BuscarAparelho();
-			lstCelular.DataSource = aparelhos;
-		}
-
-		private void btnComprar_Click(object sender, EventArgs e)
-		{
-			Aparelho selecionado = aparelhos[lstCelular.SelectedIndex];
-			if (selecionado.Quantidade > 0)
-				new frmComprar(selecionado).ShowDialog();
-			else
-				MessageBox.Show("Não há aparelhos deste modelo no estoque!");
-
-		}
-
-		private void btnSair_Click(object sender, EventArgs e)
-		{
-			DialogResult resposta;
-			resposta = MessageBox.Show("Você quer sair da aplicação?", this.Text,
-								MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			if (resposta == DialogResult.Yes)
-				this.Close();
-		}
-	}
+		}		
+    }
 }

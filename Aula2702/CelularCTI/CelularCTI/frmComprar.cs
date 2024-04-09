@@ -30,11 +30,6 @@ namespace CelularCTI
 			lblDesconto.Text = aparelho.Desconto + "% a vista";
 		}
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
 		private void btnComprar_Click(object sender, EventArgs e)
 		{
 			Servico.FazerPedido(aparelho);

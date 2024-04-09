@@ -29,44 +29,46 @@ namespace CelularCTI
 			cmbFabricante.SelectedIndex = -1;
 		}
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-			try
-			{
-				if (cmbFabricante.SelectedIndex == -1) {
+            try
+            {
+                if (cmbFabricante.SelectedIndex == -1)
+                {
 
-					MessageBox.Show("Selecione o Fabricante ", this.Text,
-								MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-				Aparelho aparelho = new Aparelho();
+                    MessageBox.Show("Selecione o Fabricante ", this.Text,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                Aparelho aparelho = new Aparelho();
 
-				aparelho.Modelo = txtModelo.Text;
-				aparelho.Fabricante = fabricantes[cmbFabricante.SelectedIndex];
-				aparelho.Largura = Convert.ToDouble(nudLargura.Value);
-				aparelho.Altura = Convert.ToDouble(nudAltura.Value);
-				aparelho.Espessura = Convert.ToDouble(nudEspessura.Value);
-				aparelho.Peso = Convert.ToDouble(nudPeso.Value);
-				aparelho.Preco = nudPreco.Value;
-				aparelho.Desconto = nudDesconto.Value;
+                aparelho.Modelo = txtModelo.Text;
+                aparelho.Fabricante = fabricantes[cmbFabricante.SelectedIndex];
+                aparelho.Largura = Convert.ToDouble(numLargura.Value);
+                aparelho.Altura = Convert.ToDouble(numAltura.Value);
+                aparelho.Espessura = Convert.ToDouble(numEspessura.Value);
+                aparelho.Peso = Convert.ToDouble(numPeso.Value);
+                aparelho.Quantidade = Convert.ToDouble(numQuantidade.Value);
+                aparelho.Preco = numPreco.Value;
+                aparelho.Desconto = numDesconto.Value;
 
-				Servico.Salvar(aparelho);
+                Servico.Salvar(aparelho);
 
-				MessageBox.Show("O aparelho " + txtModelo.Text + 
-								" foi cadastrado com sucesso", this.Text, 
-								MessageBoxButtons.OK, MessageBoxIcon.Information);
-				this.Close();
-			} catch (ApplicationException ex)
-			{
+                MessageBox.Show("O aparelho " + txtModelo.Text +
+                                " foi cadastrado com sucesso", this.Text,
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (ApplicationException ex)
+            {
 
-				MessageBox.Show("Ocorreu um ao registrar o aparelho " + txtModelo.Text +
-								"\n\nMais detalhes "+ ex.Message, this.Text,
-								MessageBoxButtons.OK, MessageBoxIcon.Error);
-				this.Close();
-			}
-			
-		}
+                MessageBox.Show("Ocorreu um ao registrar o aparelho " + txtModelo.Text +
+                                "\n\nMais detalhes " + ex.Message, this.Text,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
 
-		private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
 		{
 			DialogResult resposta;
 			resposta = MessageBox.Show("Você quer realmente cancelar?", this.Text,
@@ -74,5 +76,7 @@ namespace CelularCTI
 			if (resposta == DialogResult.Yes)
 				this.Close();
 		}
-	}
+
+        
+    }
 }
