@@ -45,6 +45,7 @@
 			this.btnComprar = new System.Windows.Forms.Button();
 			this.btnNovo = new System.Windows.Forms.Button();
 			this.btnSair = new System.Windows.Forms.Button();
+			this.btnLstTodos = new System.Windows.Forms.Button();
 			this.gboPesquisa.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudPrecoMax)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudPrecoMin)).BeginInit();
@@ -215,6 +216,7 @@
 			this.btnNovo.TabIndex = 4;
 			this.btnNovo.Text = "Novo";
 			this.btnNovo.UseVisualStyleBackColor = true;
+			this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
 			// 
 			// btnSair
 			// 
@@ -224,12 +226,24 @@
 			this.btnSair.TabIndex = 5;
 			this.btnSair.Text = "Sair";
 			this.btnSair.UseVisualStyleBackColor = true;
+			this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+			// 
+			// btnLstTodos
+			// 
+			this.btnLstTodos.Location = new System.Drawing.Point(537, 327);
+			this.btnLstTodos.Name = "btnLstTodos";
+			this.btnLstTodos.Size = new System.Drawing.Size(75, 23);
+			this.btnLstTodos.TabIndex = 6;
+			this.btnLstTodos.Text = "Listar Todos";
+			this.btnLstTodos.UseVisualStyleBackColor = true;
+			this.btnLstTodos.Click += new System.EventHandler(this.btnLstTodos_Click);
 			// 
 			// frmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(644, 391);
+			this.Controls.Add(this.btnLstTodos);
 			this.Controls.Add(this.btnSair);
 			this.Controls.Add(this.btnNovo);
 			this.Controls.Add(this.btnComprar);
@@ -266,6 +280,7 @@
 		private System.Windows.Forms.Button btnComprar;
 		private System.Windows.Forms.Button btnNovo;
 		private System.Windows.Forms.Button btnSair;
+		private System.Windows.Forms.Button btnLstTodos;
 	}
 }
 

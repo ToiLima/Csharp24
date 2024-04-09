@@ -70,7 +70,7 @@ namespace CelularCTI.Model.Entidades
 				sql =	"INSERT INTO aparelho " +
 							"(id_aparelho, id_fabricante, modelo, largura, altura, espessura, " +
 							"peso, quantidade, preco, desconto) " +
-						"VALUES ( " +
+						"VALUES (DEFAULT, " +
 							ap.Fabricante.Id_Fabricante + ",'" + 
 							ap.Modelo + "',"+ 
 							ap.Largura.ToString().Replace(',', '.') + "," + 

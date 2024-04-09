@@ -36,8 +36,8 @@ namespace CelularCTI.Model.Entidades
 			{
 				if (value > 0)
 					quantidade = value;
-				else
-					throw new Exception("O campo Preço do produto deve ser maior que zero!");
+				/*else
+					throw new Exception("O campo Preço do produto deve ser maior que zero!");*/
 			}
 		}
 		public decimal Preco
@@ -62,10 +62,10 @@ namespace CelularCTI.Model.Entidades
 		public override string ToString()
 		{
 			// veremos o uso deste método em breve.
-			return Fabricante.Nome.PadRight(12) + " " + 
-				Modelo.PadRight(25) + " " + 
-				Preco.ToString("C").PadLeft(20) +
-			    "      (" + Quantidade + " em estoque)";
+			return Fabricante.Nome.PadRight(12) + " " +
+				Modelo.PadRight(25) + " " +
+				Preco.ToString("#,##0.00").PadLeft(10) + " " +
+				"   (" + Quantidade + "em estoque)";
 			//data_nasc.ToString("Bauru, dd /de MMMM de yyyy.")
 		}
 	}
