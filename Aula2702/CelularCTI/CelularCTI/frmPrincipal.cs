@@ -63,17 +63,7 @@ namespace CelularCTI
 				this.Close();
 		}
 
-		private void btnComprar_Click(object sender, EventArgs e)
-		{
-			Aparelho selecionado = aparelhos[lstCelular.SelectedIndex];
-			if (selecionado.Quantidade > 0)
-				new frmComprar(selecionado).ShowDialog();
-			else
-				MessageBox.Show("Não há aparelhos deste modelo no estoque!");
-
-		}
-
-		private void btnNovo_Click(object sender, EventArgs e)
+        private void btnNovo_Click(object sender, EventArgs e)
 		{
 			new frmNovo().ShowDialog();
 		}
@@ -88,6 +78,21 @@ namespace CelularCTI
 		{
 			aparelhos = Servico.BuscarAparelhos(txtModelo.Text);
 			lstCelular.DataSource = aparelhos;
-		}		
-    }
+		}
+
+		private void btnComprar_Click_1(object sender, EventArgs e)
+		{
+            Aparelho ap = lstCelular.SelectedItem as Aparelho;
+
+            if (ap == null && ap.Quantidade >= 0)
+            {
+                MessageBox.Show("Selecione um aparelho para comprar", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else
+            {
+                new frmComprar(ap).ShowDialog();
+            }
+        }
+	}
 }

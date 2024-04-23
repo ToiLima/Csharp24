@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
             this.gboPesquisa = new System.Windows.Forms.GroupBox();
+            this.btnLstTodos = new System.Windows.Forms.Button();
             this.lblA = new System.Windows.Forms.Label();
             this.numPrecoMax = new System.Windows.Forms.NumericUpDown();
             this.btnFabricante = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnLstTodos = new System.Windows.Forms.Button();
             this.gboPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecoMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecoMin)).BeginInit();
@@ -72,6 +72,16 @@
             this.gboPesquisa.TabIndex = 0;
             this.gboPesquisa.TabStop = false;
             this.gboPesquisa.Text = "Pesquisar por";
+            // 
+            // btnLstTodos
+            // 
+            this.btnLstTodos.Location = new System.Drawing.Point(519, 95);
+            this.btnLstTodos.Name = "btnLstTodos";
+            this.btnLstTodos.Size = new System.Drawing.Size(75, 23);
+            this.btnLstTodos.TabIndex = 6;
+            this.btnLstTodos.Text = "Listar Todos";
+            this.btnLstTodos.UseVisualStyleBackColor = true;
+            this.btnLstTodos.Click += new System.EventHandler(this.btnLstTodos_Click);
             // 
             // lblA
             // 
@@ -191,7 +201,6 @@
             // lstCelular
             // 
             this.lstCelular.FormatString = "C2";
-            this.lstCelular.FormattingEnabled = true;
             this.lstCelular.Location = new System.Drawing.Point(9, 19);
             this.lstCelular.Name = "lstCelular";
             this.lstCelular.Size = new System.Drawing.Size(500, 147);
@@ -205,6 +214,7 @@
             this.btnComprar.TabIndex = 3;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click_1);
             // 
             // btnNovo
             // 
@@ -225,16 +235,6 @@
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnLstTodos
-            // 
-            this.btnLstTodos.Location = new System.Drawing.Point(519, 95);
-            this.btnLstTodos.Name = "btnLstTodos";
-            this.btnLstTodos.Size = new System.Drawing.Size(75, 23);
-            this.btnLstTodos.TabIndex = 6;
-            this.btnLstTodos.Text = "Listar Todos";
-            this.btnLstTodos.UseVisualStyleBackColor = true;
-            this.btnLstTodos.Click += new System.EventHandler(this.btnLstTodos_Click);
             // 
             // frmPrincipal
             // 
